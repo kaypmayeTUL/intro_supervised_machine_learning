@@ -538,22 +538,28 @@
                 <option value="0">Introduction to Supervised Learning with Python</option>
                 <option value="1">What is Python?</option>
                 <option value="2">Understanding Machine Learning Methods</option>
-                <option value="3">🖥️ Python IDEs (Integrated Development Environments)</option>
-                <option value="4">📥 Installing Python</option>
-                <option value="5">📦 Installing Python Libraries</option>
-                <option value="6">Step 1: Import Libraries</option>
-                <option value="7">Step 2: Create the Car Dataset</option>
-                <option value="8">Step 3: Explore the Data</option>
-                <option value="9">Step 4: Prepare Data for Machine Learning</option>
-                <option value="10">Step 5: Build and Train Models</option>
-                <option value="11">Step 6: Evaluate Model Performance</option>
-                <option value="12">Step 7: Feature Importance Analysis</option>
-                <option value="13">Step 8: Make Predictions on New Data</option>
-                <option value="14">🎓 Key Takeaways & Learning Outcomes</option>
-                <option value="15">💡 Practice Exercises</option>
-                <option value="16">Contact & Questions</option>
+                <option value="3">⚖️ Overfitting vs. Underfitting</option>
+                <option value="4">🗺️ Choosing the Right Algorithm</option>
+                <option value="5">🖥️ Python IDEs (Integrated Development Environments)</option>
+                <option value="6">📥 Installing Python</option>
+                <option value="7">📦 Installing Python Libraries</option>
+                <option value="8">Step 1: Import Libraries</option>
+                <option value="9">Step 2: Create the Car Dataset</option>
+                <option value="10">Step 3: Explore the Data</option>
+                <option value="11">Step 4: Prepare Data for Machine Learning</option>
+                <option value="12">📏 Feature Scaling: Why It Matters</option>
+                <option value="13">🧮 Understanding the Models: Math & Intuition</option>
+                <option value="14">Step 5: Build and Train Models</option>
+                <option value="15">Step 6: Evaluate Model Performance</option>
+                <option value="16">Step 7: Feature Importance Analysis</option>
+                <option value="17">Step 8: Make Predictions on New Data</option>
+                <option value="18">⚠️ Bias in Machine Learning</option>
+                <option value="19">🚫 When NOT to Use Machine Learning</option>
+                <option value="20">🎓 Key Takeaways & Learning Outcomes</option>
+                <option value="21">💡 Practice Exercises & Next Steps</option>
+                <option value="22">Contact & Questions</option>
             </select>
-            <span class="page-indicator" id="pageIndicator">1 / 14</span>
+            <span class="page-indicator" id="pageIndicator">1 / 23</span>
             <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
         </div>
     </nav>
@@ -564,9 +570,7 @@
         <section class="slide active" id="slide-0">
             <div class="title-slide">
 <h1>Introduction to Supervised Learning with Python</h1>
-<p class="subtitle">Predicting Car Prices: A Hands-On Tutorial</p>    
-<p class="subtitle">Kay P Maye | Tulane University Libraries</p>   
-            </div>
+<p class="subtitle">Predicting Car Prices: A Hands-On Tutorial</p>            </div>
         </section>
 
         <section class="slide " id="slide-1">
@@ -652,12 +656,188 @@
 <li><strong>Training data:</strong> Historical data with known prices</li>
 </ul>
 
+<div class="highlight-box warning">
+<h4>📚 Key Terms</h4>
+<ul>
+<li><strong>Feature (X):</strong> An input variable used to make predictions (e.g., car age, mileage). Think of features as the "questions" you ask about your data.</li>
+<li><strong>Target (y):</strong> The value you're trying to predict (e.g., car price). Also called the "label" or "outcome."</li>
+<li><strong>Sample:</strong> A single row in your dataset representing one observation (e.g., one car with all its details).</li>
+</ul>
+</div>
+
 <div class="highlight-box success">
 <p>✅ <strong>Our Goal:</strong> Train a model that can accurately predict the price of any car based on its characteristics.</p>
 </div>            </div>
         </section>
 
         <section class="slide " id="slide-3">
+            <div class="content-slide">
+<h2>⚖️ Overfitting vs. Underfitting</h2>
+
+<p>One of the most important concepts in machine learning is finding the right balance between a model that's too simple and one that's too complex.</p>
+
+<div class="method-grid">
+<div class="method-card">
+<h4>📉 Underfitting</h4>
+<p><strong>The model is too simple</strong></p>
+<p>Like studying only chapter 1 for a 10-chapter exam. The model hasn't learned enough patterns from the data.</p>
+<p><strong>Signs:</strong></p>
+<ul>
+<li>Poor performance on training data</li>
+<li>Poor performance on test data</li>
+<li>Model misses obvious patterns</li>
+</ul>
+<p><strong>Fix:</strong> Use a more complex model, add more features, train longer</p>
+</div>
+
+<div class="method-card">
+<h4>📈 Overfitting</h4>
+<p><strong>The model is too complex</strong></p>
+<p>Like memorizing answers instead of understanding concepts. The model learned the training data too well, including noise and outliers.</p>
+<p><strong>Signs:</strong></p>
+<ul>
+<li>Excellent performance on training data</li>
+<li>Poor performance on test data</li>
+<li>Model doesn't generalize</li>
+</ul>
+<p><strong>Fix:</strong> Use simpler model, get more data, use regularization</p>
+</div>
+</div>
+
+<div style="text-align: center; margin: 30px 0;">
+<svg width="700" height="280" viewBox="0 0 700 280" style="max-width: 100%;">
+  <!-- Underfitting graph -->
+  <g transform="translate(20, 30)">
+    <text x="80" y="-10" text-anchor="middle" fill="#285C4D" font-size="14" font-weight="bold">Underfitting</text>
+    <!-- Axes -->
+    <line x1="30" y1="180" x2="170" y2="180" stroke="#285C4D" stroke-width="2"/>
+    <line x1="30" y1="180" x2="30" y2="20" stroke="#285C4D" stroke-width="2"/>
+    <!-- Data points (curved pattern) -->
+    <circle cx="45" cy="150" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="60" cy="120" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="80" cy="70" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="100" cy="50" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="120" cy="60" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="140" cy="100" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="160" cy="140" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <!-- Simple straight line (underfitting) -->
+    <line x1="40" y1="130" x2="165" y2="80" stroke="#CC9900" stroke-width="3"/>
+    <text x="80" y="210" text-anchor="middle" fill="#CC9900" font-size="12">Too simple!</text>
+  </g>
+  
+  <!-- Good fit graph -->
+  <g transform="translate(250, 30)">
+    <text x="80" y="-10" text-anchor="middle" fill="#285C4D" font-size="14" font-weight="bold">Good Fit ✓</text>
+    <!-- Axes -->
+    <line x1="30" y1="180" x2="170" y2="180" stroke="#285C4D" stroke-width="2"/>
+    <line x1="30" y1="180" x2="30" y2="20" stroke="#285C4D" stroke-width="2"/>
+    <!-- Data points -->
+    <circle cx="45" cy="150" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="60" cy="120" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="80" cy="70" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="100" cy="50" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="120" cy="60" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="140" cy="100" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="160" cy="140" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <!-- Smooth curve (good fit) -->
+    <path d="M 40 155 Q 70 60, 100 50 Q 130 50, 165 145" stroke="#658D1B" stroke-width="3" fill="none"/>
+    <text x="80" y="210" text-anchor="middle" fill="#658D1B" font-size="12">Just right!</text>
+  </g>
+  
+  <!-- Overfitting graph -->
+  <g transform="translate(480, 30)">
+    <text x="80" y="-10" text-anchor="middle" fill="#285C4D" font-size="14" font-weight="bold">Overfitting</text>
+    <!-- Axes -->
+    <line x1="30" y1="180" x2="170" y2="180" stroke="#285C4D" stroke-width="2"/>
+    <line x1="30" y1="180" x2="30" y2="20" stroke="#285C4D" stroke-width="2"/>
+    <!-- Data points -->
+    <circle cx="45" cy="150" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="60" cy="120" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="80" cy="70" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="100" cy="50" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="120" cy="60" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="140" cy="100" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <circle cx="160" cy="140" r="5" fill="#71C5E8" stroke="#285C4D"/>
+    <!-- Wiggly line through every point (overfitting) -->
+    <path d="M 42 150 L 45 150 Q 50 150, 55 130 L 60 120 Q 65 100, 70 85 L 80 70 Q 85 55, 90 52 L 100 50 Q 108 48, 112 55 L 120 60 Q 128 70, 135 90 L 140 100 Q 148 115, 155 130 L 160 140 Q 162 145, 165 142" stroke="#d9534f" stroke-width="3" fill="none"/>
+    <text x="80" y="210" text-anchor="middle" fill="#d9534f" font-size="12">Too complex!</text>
+  </g>
+</svg>
+</div>
+
+<div class="highlight-box info">
+<h4>🎯 The Goal: Generalization</h4>
+<p>We want our model to learn the <strong>underlying patterns</strong> in the data, not memorize specific examples. A well-generalized model performs well on data it has never seen before. This is why we split data into training and testing sets!</p>
+</div>
+            </div>
+        </section>
+
+        <section class="slide " id="slide-4">
+            <div class="content-slide">
+<h2>🗺️ Choosing the Right Algorithm</h2>
+
+<p>With so many algorithms available, how do you know which one to use? Start by asking: <strong>What type of problem am I solving?</strong></p>
+
+<div class="method-grid">
+<div class="method-card" style="border-left: 5px solid #658D1B;">
+<h4>📈 Regression</h4>
+<p><strong>Ask yourself:</strong> "How much?" or "How many?"</p>
+<p>Use when predicting a <strong>continuous number</strong>.</p>
+<p><em>Examples:</em> House prices, temperature, sales forecasts</p>
+<p><strong>Algorithms:</strong> Linear Regression, Random Forest</p>
+</div>
+
+<div class="method-card" style="border-left: 5px solid #00778B;">
+<h4>🏷️ Classification</h4>
+<p><strong>Ask yourself:</strong> "Which category?" or "Yes or No?"</p>
+<p>Use when predicting a <strong>discrete category</strong>.</p>
+<p><em>Examples:</em> Spam detection, disease diagnosis</p>
+<p><strong>Algorithms:</strong> Logistic Regression, Decision Trees</p>
+</div>
+
+<div class="method-card" style="border-left: 5px solid #CC9900;">
+<h4>🔍 Clustering</h4>
+<p><strong>Ask yourself:</strong> "What groups exist in my data?"</p>
+<p>Use when you have <strong>no labels</strong> and want to find structure.</p>
+<p><em>Examples:</em> Customer segmentation, anomaly detection</p>
+<p><strong>Algorithms:</strong> K-Means, Hierarchical Clustering</p>
+</div>
+</div>
+
+<div style="text-align: center; margin: 30px 0;">
+<svg width="550" height="160" viewBox="0 0 550 160" style="max-width: 100%;">
+  <!-- Central question -->
+  <rect x="175" y="10" width="200" height="40" rx="20" fill="#285C4D"/>
+  <text x="275" y="36" text-anchor="middle" fill="white" font-size="14" font-weight="bold">What's your goal?</text>
+  
+  <!-- Arrows -->
+  <line x1="175" y1="50" x2="90" y2="85" stroke="#285C4D" stroke-width="2"/>
+  <line x1="275" y1="50" x2="275" y2="85" stroke="#285C4D" stroke-width="2"/>
+  <line x1="375" y1="50" x2="460" y2="85" stroke="#285C4D" stroke-width="2"/>
+  
+  <!-- Three boxes -->
+  <rect x="15" y="90" width="150" height="55" rx="8" fill="#658D1B"/>
+  <text x="90" y="115" text-anchor="middle" fill="white" font-size="13" font-weight="bold">REGRESSION</text>
+  <text x="90" y="133" text-anchor="middle" fill="white" font-size="11">Predict a number</text>
+  
+  <rect x="200" y="90" width="150" height="55" rx="8" fill="#00778B"/>
+  <text x="275" y="115" text-anchor="middle" fill="white" font-size="13" font-weight="bold">CLASSIFICATION</text>
+  <text x="275" y="133" text-anchor="middle" fill="white" font-size="11">Predict a category</text>
+  
+  <rect x="385" y="90" width="150" height="55" rx="8" fill="#CC9900"/>
+  <text x="460" y="115" text-anchor="middle" fill="white" font-size="13" font-weight="bold">CLUSTERING</text>
+  <text x="460" y="133" text-anchor="middle" fill="white" font-size="11">Find groups</text>
+</svg>
+</div>
+
+<div class="highlight-box info">
+<h4>💡 Today's Workshop: Regression</h4>
+<p>We're predicting <strong>car prices</strong> (a continuous number), so we use <strong>regression algorithms</strong>. We'll compare Linear Regression (simple, interpretable) with Random Forest (powerful, handles complexity).</p>
+</div>
+            </div>
+        </section>
+
+        <section class="slide " id="slide-5">
             <div class="content-slide">
 <h2>🖥️ Python IDEs (Integrated Development Environments)</h2>
 
@@ -717,7 +897,7 @@
             </div>
         </section>
 
-        <section class="slide " id="slide-4">
+        <section class="slide " id="slide-6">
             <div class="content-slide">
 <h2>📥 Installing Python</h2>
 
@@ -764,7 +944,7 @@ python --version
             </div>
         </section>
 
-        <section class="slide " id="slide-5">
+        <section class="slide " id="slide-7">
             <div class="content-slide">
 <h2>📦 Installing Python Libraries</h2>
 
@@ -826,7 +1006,7 @@ pip install pandas numpy scikit-learn matplotlib seaborn</code></div>
             </div>
         </section>
 
-        <section class="slide " id="slide-6">
+        <section class="slide " id="slide-8">
             <div class="content-slide">
 <h2>Step 1: Import Libraries</h2>
 <div class="code-explanation">
@@ -866,7 +1046,7 @@ print(&quot;Libraries imported successfully! ✅&quot;)</code></div>
             </div>
         </section>
 
-        <section class="slide " id="slide-7">
+        <section class="slide " id="slide-9">
             <div class="content-slide">
 <h2>Step 2: Create the Car Dataset</h2>
 <div class="code-explanation">
@@ -963,7 +1143,7 @@ First few rows:
             </div>
         </section>
 
-        <section class="slide " id="slide-8">
+        <section class="slide " id="slide-10">
             <div class="content-slide">
 <h2>Step 3: Explore the Data</h2>
 <div class="code-explanation">
@@ -1111,7 +1291,7 @@ plt.show()</code></div>
             </div>
         </section>
 
-        <section class="slide " id="slide-9">
+        <section class="slide " id="slide-11">
             <div class="content-slide">
 <h2>Step 4: Prepare Data for Machine Learning</h2>
 <div class="code-explanation">
@@ -1170,17 +1350,352 @@ Shape of y: (500,)
 Training set size: 400 samples
 Testing set size: 100 samples
 </div>
-<div class="highlight-box info"><h3>📚 Important Concept: Train-Test Split</h3>
+<div class="highlight-box info"><h3>📚 Key Terms: Training vs. Testing</h3>
 We split our data into two sets:
 <ul>
-<li><strong>Training Set (80%)</strong>: Used to train the model</li>
-<li><strong>Testing Set (20%)</strong>: Used to evaluate the model on unseen data</li>
+<li><strong>Training Set (80%):</strong> The data used to teach the model. The model learns patterns from this data by adjusting its internal settings.</li>
+<li><strong>Testing Set (20%):</strong> Data the model has never seen. We use this to evaluate how well the model performs on new, unseen examples.</li>
 </ul>
-This helps us assess how well our model generalizes to new data!</div>
+<p><strong>Why split?</strong> If we tested on the same data we trained on, we wouldn't know if the model actually learned useful patterns or just memorized the answers!</p></div>
             </div>
         </section>
 
-        <section class="slide " id="slide-10">
+        <section class="slide " id="slide-12">
+            <div class="content-slide">
+<h2>📏 Feature Scaling: Why It Matters</h2>
+
+<p>Before training models, we often need to <strong>scale</strong> our features. But why?</p>
+
+<div class="highlight-box warning">
+<h4>⚠️ The Problem: Features on Different Scales</h4>
+<p>Consider our car data:</p>
+<ul>
+<li><strong>Age:</strong> 0-15 years (small numbers)</li>
+<li><strong>Mileage:</strong> 5,000-200,000 km (large numbers)</li>
+<li><strong>Engine Size:</strong> 1.4-3.5 L (tiny numbers)</li>
+</ul>
+<p>Without scaling, algorithms might think mileage is more important just because it has bigger numbers!</p>
+</div>
+
+<h3>Common Scaling Methods</h3>
+
+<div class="method-grid">
+<div class="method-card">
+<h4>📊 Standardization (Z-score)</h4>
+<p><strong>Formula:</strong> z = (x - mean) / std</p>
+<p>Centers data around 0 with standard deviation of 1.</p>
+<p><strong>Use when:</strong> Data has outliers, or algorithm assumes normal distribution</p>
+<p><strong>Result:</strong> Values typically between -3 and +3</p>
+<div style="background: #f8f9fa; padding: 10px; border-radius: 6px; margin-top: 10px; font-family: monospace; font-size: 0.9rem;">
+from sklearn.preprocessing import StandardScaler<br>
+scaler = StandardScaler()<br>
+X_scaled = scaler.fit_transform(X)
+</div>
+</div>
+
+<div class="method-card">
+<h4>📐 Normalization (Min-Max)</h4>
+<p><strong>Formula:</strong> x' = (x - min) / (max - min)</p>
+<p>Scales all values to a fixed range, usually 0-1.</p>
+<p><strong>Use when:</strong> You need bounded values, or for neural networks</p>
+<p><strong>Result:</strong> Values between 0 and 1</p>
+<div style="background: #f8f9fa; padding: 10px; border-radius: 6px; margin-top: 10px; font-family: monospace; font-size: 0.9rem;">
+from sklearn.preprocessing import MinMaxScaler<br>
+scaler = MinMaxScaler()<br>
+X_scaled = scaler.fit_transform(X)
+</div>
+</div>
+</div>
+
+<h3>Visual Example: Before vs. After Scaling</h3>
+
+<div style="text-align: center; margin: 20px 0;">
+<svg width="650" height="200" viewBox="0 0 650 200" style="max-width: 100%;">
+  <!-- Before scaling -->
+  <g transform="translate(20, 20)">
+    <text x="120" y="0" text-anchor="middle" fill="#285C4D" font-size="14" font-weight="bold">Before Scaling</text>
+    
+    <!-- Age bar -->
+    <text x="0" y="35" fill="#666" font-size="11">Age</text>
+    <rect x="50" y="25" width="15" height="20" fill="#71C5E8" stroke="#285C4D"/>
+    <text x="70" y="40" fill="#666" font-size="10">0-15</text>
+    
+    <!-- Mileage bar -->
+    <text x="0" y="75" fill="#666" font-size="11">Mileage</text>
+    <rect x="50" y="65" width="180" height="20" fill="#CC9900" stroke="#285C4D"/>
+    <text x="235" y="80" fill="#666" font-size="10">5k-200k</text>
+    
+    <!-- Engine bar -->
+    <text x="0" y="115" fill="#666" font-size="11">Engine</text>
+    <rect x="50" y="105" width="8" height="20" fill="#658D1B" stroke="#285C4D"/>
+    <text x="63" y="120" fill="#666" font-size="10">1.4-3.5</text>
+    
+    <text x="120" y="160" text-anchor="middle" fill="#d9534f" font-size="11">❌ Mileage dominates!</text>
+  </g>
+  
+  <!-- Arrow -->
+  <g transform="translate(300, 80)">
+    <text x="25" y="0" fill="#285C4D" font-size="24">→</text>
+    <text x="25" y="20" text-anchor="middle" fill="#666" font-size="10">Scale</text>
+  </g>
+  
+  <!-- After scaling -->
+  <g transform="translate(370, 20)">
+    <text x="120" y="0" text-anchor="middle" fill="#285C4D" font-size="14" font-weight="bold">After Scaling (0-1)</text>
+    
+    <!-- Age bar -->
+    <text x="0" y="35" fill="#666" font-size="11">Age</text>
+    <rect x="50" y="25" width="150" height="20" fill="#71C5E8" stroke="#285C4D"/>
+    <text x="205" y="40" fill="#666" font-size="10">0-1</text>
+    
+    <!-- Mileage bar -->
+    <text x="0" y="75" fill="#666" font-size="11">Mileage</text>
+    <rect x="50" y="65" width="150" height="20" fill="#CC9900" stroke="#285C4D"/>
+    <text x="205" y="80" fill="#666" font-size="10">0-1</text>
+    
+    <!-- Engine bar -->
+    <text x="0" y="115" fill="#666" font-size="11">Engine</text>
+    <rect x="50" y="105" width="150" height="20" fill="#658D1B" stroke="#285C4D"/>
+    <text x="205" y="120" fill="#666" font-size="10">0-1</text>
+    
+    <text x="120" y="160" text-anchor="middle" fill="#658D1B" font-size="11">✓ All features equal weight</text>
+  </g>
+</svg>
+</div>
+
+<div class="highlight-box info">
+<h4>💡 Which Algorithms Need Scaling?</h4>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+<tr style="background: rgba(0,0,0,0.05);">
+<th style="padding: 8px; text-align: left; border-bottom: 2px solid #00778B;">Needs Scaling ✓</th>
+<th style="padding: 8px; text-align: left; border-bottom: 2px solid #00778B;">Doesn't Need Scaling</th>
+</tr>
+<tr>
+<td style="padding: 8px; border-bottom: 1px solid #ddd;">Linear Regression</td>
+<td style="padding: 8px; border-bottom: 1px solid #ddd;">Decision Trees</td>
+</tr>
+<tr>
+<td style="padding: 8px; border-bottom: 1px solid #ddd;">K-Nearest Neighbors (KNN)</td>
+<td style="padding: 8px; border-bottom: 1px solid #ddd;">Random Forest</td>
+</tr>
+<tr>
+<td style="padding: 8px; border-bottom: 1px solid #ddd;">Support Vector Machines (SVM)</td>
+<td style="padding: 8px; border-bottom: 1px solid #ddd;">Gradient Boosting</td>
+</tr>
+<tr>
+<td style="padding: 8px;">Neural Networks</td>
+<td style="padding: 8px;">Naive Bayes</td>
+</tr>
+</table>
+<p style="margin-top: 15px;"><strong>Rule of thumb:</strong> If the algorithm uses distances or gradients, scale your data!</p>
+</div>
+            </div>
+        </section>
+
+        <section class="slide " id="slide-13">
+            <div class="content-slide">
+<h2>🧮 Understanding the Models: Math & Intuition</h2>
+
+<p>Before we build our models, let's understand how they work under the hood. We'll use two different approaches to predict car prices.</p>
+
+<div class="method-grid">
+<div class="method-card" style="grid-column: span 2;">
+<h4>📈 Model 1: Linear Regression</h4>
+<p><strong>The Idea:</strong> Find the best straight line (or hyperplane) that fits the data.</p>
+
+<p><strong>The Math:</strong></p>
+<div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 15px 0; text-align: center;">
+<p style="font-size: 1.3rem; font-family: 'Times New Roman', serif; margin: 0;">
+<strong>ŷ = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ</strong>
+</p>
+</div>
+
+<p>Where:</p>
+<ul>
+<li><strong>ŷ</strong> = Predicted price</li>
+<li><strong>β₀</strong> = Intercept (base price when all features are 0)</li>
+<li><strong>β₁, β₂, ..., βₙ</strong> = Coefficients (how much each feature affects price)</li>
+<li><strong>x₁, x₂, ..., xₙ</strong> = Feature values (age, mileage, etc.)</li>
+</ul>
+
+<p><strong>Example:</strong> Price = $30,000 - ($800 × Age) - ($0.05 × Mileage) + ($2,000 × Is_Luxury)</p>
+
+<div style="text-align: center; margin: 20px 0;">
+<svg width="400" height="220" viewBox="0 0 400 220" style="max-width: 100%;">
+  <!-- Axes -->
+  <line x1="50" y1="180" x2="370" y2="180" stroke="#285C4D" stroke-width="2"/>
+  <line x1="50" y1="180" x2="50" y2="20" stroke="#285C4D" stroke-width="2"/>
+  
+  <!-- Axis labels -->
+  <text x="210" y="210" text-anchor="middle" fill="#285C4D" font-size="14">Car Age (years)</text>
+  <text x="15" y="100" text-anchor="middle" fill="#285C4D" font-size="14" transform="rotate(-90, 15, 100)">Price ($)</text>
+  
+  <!-- Data points -->
+  <circle cx="80" cy="45" r="6" fill="#71C5E8" stroke="#285C4D" stroke-width="1"/>
+  <circle cx="110" cy="65" r="6" fill="#71C5E8" stroke="#285C4D" stroke-width="1"/>
+  <circle cx="130" cy="55" r="6" fill="#71C5E8" stroke="#285C4D" stroke-width="1"/>
+  <circle cx="160" cy="85" r="6" fill="#71C5E8" stroke="#285C4D" stroke-width="1"/>
+  <circle cx="190" cy="90" r="6" fill="#71C5E8" stroke="#285C4D" stroke-width="1"/>
+  <circle cx="220" cy="105" r="6" fill="#71C5E8" stroke="#285C4D" stroke-width="1"/>
+  <circle cx="250" cy="120" r="6" fill="#71C5E8" stroke="#285C4D" stroke-width="1"/>
+  <circle cx="280" cy="130" r="6" fill="#71C5E8" stroke="#285C4D" stroke-width="1"/>
+  <circle cx="310" cy="145" r="6" fill="#71C5E8" stroke="#285C4D" stroke-width="1"/>
+  <circle cx="340" cy="160" r="6" fill="#71C5E8" stroke="#285C4D" stroke-width="1"/>
+  
+  <!-- Best fit line -->
+  <line x1="60" y1="40" x2="360" y2="165" stroke="#CC9900" stroke-width="3"/>
+  
+  <!-- Legend -->
+  <circle cx="280" cy="25" r="5" fill="#71C5E8" stroke="#285C4D"/>
+  <text x="290" y="30" fill="#2c3e50" font-size="12">Data points</text>
+  <line x1="275" y1="45" x2="295" y2="45" stroke="#CC9900" stroke-width="3"/>
+  <text x="300" y="50" fill="#2c3e50" font-size="12">Best fit line</text>
+</svg>
+</div>
+
+<p style="text-align: center; font-style: italic; color: #666;">Linear regression finds the line that minimizes the distance between predictions and actual values.</p>
+</div>
+</div>
+
+<div class="method-grid">
+<div class="method-card" style="grid-column: span 2;">
+<h4>🌲 Model 2: Random Forest</h4>
+<p><strong>The Idea:</strong> Build many decision trees, each making predictions, then average their results.</p>
+
+<p><strong>How It Works:</strong></p>
+<ol>
+<li><strong>Bootstrap Sampling:</strong> Create multiple random subsets of the training data</li>
+<li><strong>Build Trees:</strong> Train a decision tree on each subset</li>
+<li><strong>Aggregate:</strong> Average all tree predictions (for regression) or vote (for classification)</li>
+</ol>
+
+<div style="text-align: center; margin: 20px 0;">
+<svg width="500" height="280" viewBox="0 0 500 280" style="max-width: 100%;">
+  <!-- Tree 1 -->
+  <g transform="translate(50, 0)">
+    <text x="40" y="15" text-anchor="middle" fill="#285C4D" font-size="11" font-weight="bold">Tree 1</text>
+    <!-- Root -->
+    <rect x="15" y="25" width="50" height="25" rx="4" fill="#e8f5f1" stroke="#285C4D" stroke-width="1.5"/>
+    <text x="40" y="42" text-anchor="middle" fill="#285C4D" font-size="9">Age≤5?</text>
+    <!-- Branches -->
+    <line x1="30" y1="50" x2="15" y2="70" stroke="#285C4D" stroke-width="1.5"/>
+    <line x1="50" y1="50" x2="65" y2="70" stroke="#285C4D" stroke-width="1.5"/>
+    <!-- Left child -->
+    <rect x="0" y="70" width="35" height="22" rx="4" fill="#d4edda" stroke="#658D1B" stroke-width="1.5"/>
+    <text x="17" y="85" text-anchor="middle" fill="#285C4D" font-size="8">$25k</text>
+    <!-- Right child -->
+    <rect x="45" y="70" width="35" height="22" rx="4" fill="#d4edda" stroke="#658D1B" stroke-width="1.5"/>
+    <text x="62" y="85" text-anchor="middle" fill="#285C4D" font-size="8">$18k</text>
+  </g>
+  
+  <!-- Tree 2 -->
+  <g transform="translate(170, 0)">
+    <text x="40" y="15" text-anchor="middle" fill="#285C4D" font-size="11" font-weight="bold">Tree 2</text>
+    <rect x="15" y="25" width="50" height="25" rx="4" fill="#e8f5f1" stroke="#285C4D" stroke-width="1.5"/>
+    <text x="40" y="42" text-anchor="middle" fill="#285C4D" font-size="9">Miles≤50k?</text>
+    <line x1="30" y1="50" x2="15" y2="70" stroke="#285C4D" stroke-width="1.5"/>
+    <line x1="50" y1="50" x2="65" y2="70" stroke="#285C4D" stroke-width="1.5"/>
+    <rect x="0" y="70" width="35" height="22" rx="4" fill="#d4edda" stroke="#658D1B" stroke-width="1.5"/>
+    <text x="17" y="85" text-anchor="middle" fill="#285C4D" font-size="8">$27k</text>
+    <rect x="45" y="70" width="35" height="22" rx="4" fill="#d4edda" stroke="#658D1B" stroke-width="1.5"/>
+    <text x="62" y="85" text-anchor="middle" fill="#285C4D" font-size="8">$16k</text>
+  </g>
+  
+  <!-- Tree 3 -->
+  <g transform="translate(290, 0)">
+    <text x="40" y="15" text-anchor="middle" fill="#285C4D" font-size="11" font-weight="bold">Tree 3</text>
+    <rect x="15" y="25" width="50" height="25" rx="4" fill="#e8f5f1" stroke="#285C4D" stroke-width="1.5"/>
+    <text x="40" y="42" text-anchor="middle" fill="#285C4D" font-size="9">Luxury?</text>
+    <line x1="30" y1="50" x2="15" y2="70" stroke="#285C4D" stroke-width="1.5"/>
+    <line x1="50" y1="50" x2="65" y2="70" stroke="#285C4D" stroke-width="1.5"/>
+    <rect x="0" y="70" width="35" height="22" rx="4" fill="#d4edda" stroke="#658D1B" stroke-width="1.5"/>
+    <text x="17" y="85" text-anchor="middle" fill="#285C4D" font-size="8">$30k</text>
+    <rect x="45" y="70" width="35" height="22" rx="4" fill="#d4edda" stroke="#658D1B" stroke-width="1.5"/>
+    <text x="62" y="85" text-anchor="middle" fill="#285C4D" font-size="8">$20k</text>
+  </g>
+  
+  <!-- Dots indicating more trees -->
+  <text x="415" y="60" fill="#285C4D" font-size="20">...</text>
+  <text x="440" y="60" fill="#285C4D" font-size="11" font-weight="bold">Tree n</text>
+  
+  <!-- Arrows pointing down -->
+  <line x1="90" y1="105" x2="90" y2="130" stroke="#CC9900" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="210" y1="105" x2="210" y2="130" stroke="#CC9900" stroke-width="2"/>
+  <line x1="330" y1="105" x2="330" y2="130" stroke="#CC9900" stroke-width="2"/>
+  <line x1="450" y1="105" x2="450" y2="130" stroke="#CC9900" stroke-width="2"/>
+  
+  <!-- Prediction boxes -->
+  <rect x="65" y="135" width="50" height="25" rx="4" fill="#fef9e7" stroke="#CC9900" stroke-width="1.5"/>
+  <text x="90" y="152" text-anchor="middle" fill="#285C4D" font-size="10">$24k</text>
+  
+  <rect x="185" y="135" width="50" height="25" rx="4" fill="#fef9e7" stroke="#CC9900" stroke-width="1.5"/>
+  <text x="210" y="152" text-anchor="middle" fill="#285C4D" font-size="10">$22k</text>
+  
+  <rect x="305" y="135" width="50" height="25" rx="4" fill="#fef9e7" stroke="#CC9900" stroke-width="1.5"/>
+  <text x="330" y="152" text-anchor="middle" fill="#285C4D" font-size="10">$26k</text>
+  
+  <rect x="425" y="135" width="50" height="25" rx="4" fill="#fef9e7" stroke="#CC9900" stroke-width="1.5"/>
+  <text x="450" y="152" text-anchor="middle" fill="#285C4D" font-size="10">$23k</text>
+  
+  <!-- Aggregation arrows -->
+  <line x1="90" y1="165" x2="250" y2="200" stroke="#285C4D" stroke-width="1.5"/>
+  <line x1="210" y1="165" x2="250" y2="200" stroke="#285C4D" stroke-width="1.5"/>
+  <line x1="330" y1="165" x2="250" y2="200" stroke="#285C4D" stroke-width="1.5"/>
+  <line x1="450" y1="165" x2="250" y2="200" stroke="#285C4D" stroke-width="1.5"/>
+  
+  <!-- Final prediction -->
+  <rect x="200" y="205" width="100" height="35" rx="6" fill="#285C4D" stroke="#1e4a3d" stroke-width="2"/>
+  <text x="250" y="220" text-anchor="middle" fill="white" font-size="10">AVERAGE</text>
+  <text x="250" y="235" text-anchor="middle" fill="#71C5E8" font-size="12" font-weight="bold">$23,750</text>
+  
+  <!-- Label -->
+  <text x="250" y="265" text-anchor="middle" fill="#666" font-size="11" font-style="italic">Final Prediction</text>
+</svg>
+</div>
+
+<p><strong>Why Random Forest Works Better:</strong></p>
+<ul>
+<li>Each tree sees different data patterns (reduces overfitting)</li>
+<li>Averaging reduces errors from individual trees</li>
+<li>Can capture non-linear relationships that linear regression misses</li>
+</ul>
+</div>
+</div>
+
+<div class="highlight-box warning">
+<h4>⚖️ Model Comparison</h4>
+<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+<tr style="background: rgba(0,0,0,0.05);">
+<th style="padding: 10px; text-align: left; border-bottom: 2px solid #CC9900;">Aspect</th>
+<th style="padding: 10px; text-align: left; border-bottom: 2px solid #CC9900;">Linear Regression</th>
+<th style="padding: 10px; text-align: left; border-bottom: 2px solid #CC9900;">Random Forest</th>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>Complexity</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #ddd;">Simple, fast</td>
+<td style="padding: 10px; border-bottom: 1px solid #ddd;">More complex, slower</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>Interpretability</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #ddd;">Easy to understand coefficients</td>
+<td style="padding: 10px; border-bottom: 1px solid #ddd;">Harder to interpret</td>
+</tr>
+<tr>
+<td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>Relationships</strong></td>
+<td style="padding: 10px; border-bottom: 1px solid #ddd;">Assumes linear relationships</td>
+<td style="padding: 10px; border-bottom: 1px solid #ddd;">Captures non-linear patterns</td>
+</tr>
+<tr>
+<td style="padding: 10px;"><strong>Accuracy</strong></td>
+<td style="padding: 10px;">Good for linear data</td>
+<td style="padding: 10px;">Often more accurate</td>
+</tr>
+</table>
+</div>
+            </div>
+        </section>
+
+        <section class="slide " id="slide-14">
             <div class="content-slide">
 <h2>Step 5: Build and Train Models</h2>
 <h3>Model 1: Linear Regression</h3>
@@ -1224,10 +1739,24 @@ print(&quot;\nPredictions made on test set!&quot;)</code></div>
 
 Predictions made on test set!
 </div>
+
+<div class="highlight-box warning">
+<h4>📚 Key Terms: Parameters vs. Hyperparameters</h4>
+<ul>
+<li><strong>Parameters:</strong> Values the model learns automatically during training (e.g., the coefficients in Linear Regression). You don't set these—the algorithm figures them out from the data.</li>
+<li><strong>Hyperparameters:</strong> Settings YOU choose before training begins. In the code above:
+  <ul>
+  <li><code>n_estimators=100</code> — Number of trees in the forest</li>
+  <li><code>max_depth=10</code> — How deep each tree can grow</li>
+  </ul>
+</li>
+</ul>
+<p><strong>Tip:</strong> Tuning hyperparameters can significantly improve model performance!</p>
+</div>
             </div>
         </section>
 
-        <section class="slide " id="slide-11">
+        <section class="slide " id="slide-15">
             <div class="content-slide">
 <h2>Step 6: Evaluate Model Performance</h2>
 <div class="code-explanation">
@@ -1279,23 +1808,20 @@ Root Mean Squared Error (RMSE): $3,430.37
 R² Score: 0.8143
 ==================================================
 </div>
-<div class="highlight-box info"><h3>📊 Understanding the Metrics:</h3>
-<ol>
-<li><strong>Mean Absolute Error (MAE)</strong>: Average difference between predictions and actual values. Lower is better.</li>
-</ol>
+<div class="highlight-box info"><h3>📚 Key Terms: Evaluation Metrics</h3>
 <ul>
-<li>Easy to interpret: if MAE = $2,000, predictions are off by $2,000 on average</li>
+<li><strong>MAE (Mean Absolute Error):</strong> The average difference between predictions and actual values. If MAE = $2,000, your predictions are off by $2,000 on average. <em>Lower is better.</em></li>
+<li><strong>RMSE (Root Mean Squared Error):</strong> Similar to MAE, but penalizes large errors more heavily. Useful when big mistakes are especially bad. <em>Lower is better.</em></li>
+<li><strong>R² Score (Coefficient of Determination):</strong> The proportion of variance in the target that your model explains.
+  <ul>
+  <li>R² = 1.0 → Perfect predictions</li>
+  <li>R² = 0.8 → Model explains 80% of the variation</li>
+  <li>R² = 0.0 → Model is no better than just guessing the average</li>
+  </ul>
+  <em>Higher is better (max 1.0).</em>
+</li>
 </ul>
-<ol>
-<li><strong>Root Mean Squared Error (RMSE)</strong>: Similar to MAE but penalizes larger errors more heavily. Lower is better.</li>
-</ol>
-<ol>
-<li><strong>R² Score</strong>: Proportion of variance explained by the model (0 to 1). Higher is better.</li>
-</ol>
-<ul>
-<li>1.0 = perfect predictions</li>
-<li>0.0 = model is no better than predicting the mean</li>
-</ul></div>
+</div>
 <div class="code-block"><code># Visualize predictions vs actual values
 fig, axes = plt.subplots(1, 2, figsize=(16, 6))
 
@@ -1358,7 +1884,7 @@ Linear Regression 2955.539049 4162.299399  0.726655
             </div>
         </section>
 
-        <section class="slide " id="slide-12">
+        <section class="slide " id="slide-16">
             <div class="content-slide">
 <h2>Step 7: Feature Importance Analysis</h2>
 <div class="code-explanation">
@@ -1407,7 +1933,7 @@ accident_history    0.023858
             </div>
         </section>
 
-        <section class="slide " id="slide-13">
+        <section class="slide " id="slide-17">
             <div class="content-slide">
 <h2>Step 8: Make Predictions on New Data</h2>
 <div class="code-explanation">
@@ -1525,7 +2051,147 @@ Car 3:
             </div>
         </section>
 
-        <section class="slide " id="slide-14">
+        <section class="slide " id="slide-18">
+            <div class="content-slide">
+<h2>⚠️ Bias in Machine Learning</h2>
+
+<p>Machine learning models are only as good as the data they learn from. If the training data contains biases, the model will learn and potentially amplify those biases.</p>
+
+<div class="highlight-box warning">
+<h4>🚨 What is ML Bias?</h4>
+<p>ML bias occurs when a model produces systematically unfair outcomes for certain groups of people. This isn't a bug—it's the model accurately learning patterns that exist in biased historical data.</p>
+</div>
+
+<h3>Sources of Bias</h3>
+
+<div class="method-grid">
+<div class="method-card">
+<h4>📊 Data Collection Bias</h4>
+<p><strong>Problem:</strong> Training data doesn't represent the real world</p>
+<p><strong>Example:</strong> A facial recognition system trained mostly on light-skinned faces performs poorly on darker skin tones</p>
+<p><strong>Fix:</strong> Collect diverse, representative data</p>
+</div>
+
+<div class="method-card">
+<h4>📜 Historical Bias</h4>
+<p><strong>Problem:</strong> Past data reflects historical discrimination</p>
+<p><strong>Example:</strong> A hiring model trained on past decisions learns to favor male candidates because historically men were hired more often</p>
+<p><strong>Fix:</strong> Audit data for historical inequities</p>
+</div>
+
+<div class="method-card">
+<h4>🏷️ Label Bias</h4>
+<p><strong>Problem:</strong> Human labelers bring their own biases</p>
+<p><strong>Example:</strong> Content moderation trained on labels from one cultural perspective may misclassify content from other cultures</p>
+<p><strong>Fix:</strong> Use diverse labeling teams, clear guidelines</p>
+</div>
+
+<div class="method-card">
+<h4>🔄 Feedback Loop Bias</h4>
+<p><strong>Problem:</strong> Model predictions influence future data</p>
+<p><strong>Example:</strong> Predictive policing sends more officers to certain neighborhoods, leading to more arrests there, "confirming" the prediction</p>
+<p><strong>Fix:</strong> Monitor for self-reinforcing patterns</p>
+</div>
+</div>
+
+<h3>Real-World Examples of ML Bias</h3>
+
+<div class="highlight-box">
+<ul>
+<li><strong>Healthcare:</strong> An algorithm used by hospitals was found to systematically deprioritize Black patients for extra care, because it used healthcare costs as a proxy for health needs</li>
+<li><strong>Criminal Justice:</strong> Risk assessment tools have shown racial disparities in predicting recidivism</li>
+<li><strong>Hiring:</strong> Amazon scrapped an AI recruiting tool that showed bias against women</li>
+<li><strong>Finance:</strong> Credit scoring algorithms have been found to charge higher rates to minorities</li>
+</ul>
+</div>
+
+<div class="highlight-box success">
+<h4>✅ How to Address Bias</h4>
+<ol>
+<li><strong>Audit your data:</strong> Check for demographic representation and historical patterns</li>
+<li><strong>Test for fairness:</strong> Evaluate model performance across different groups</li>
+<li><strong>Include diverse perspectives:</strong> Have people from different backgrounds review your work</li>
+<li><strong>Monitor continuously:</strong> Bias can emerge over time as populations change</li>
+<li><strong>Be transparent:</strong> Document limitations and potential biases</li>
+</ol>
+</div>
+            </div>
+        </section>
+
+        <section class="slide " id="slide-19">
+            <div class="content-slide">
+<h2>🚫 When NOT to Use Machine Learning</h2>
+
+<p>Machine learning is powerful, but it's not always the right solution. Knowing when <em>not</em> to use ML is just as important as knowing how to use it.</p>
+
+<h3>Don't Use ML When...</h3>
+
+<div class="method-grid">
+<div class="method-card">
+<h4>📏 Simple Rules Work</h4>
+<p>If you can solve the problem with straightforward if-then rules, don't overcomplicate it.</p>
+<p><strong>Example:</strong> "If temperature > 100°F, show fever alert" doesn't need ML.</p>
+<p><strong>Better approach:</strong> Write simple business logic</p>
+</div>
+
+<div class="method-card">
+<h4>📉 Not Enough Data</h4>
+<p>ML needs data to learn patterns. Too little data = unreliable models.</p>
+<p><strong>Rule of thumb:</strong> Need at least 10x samples per feature, often much more.</p>
+<p><strong>Better approach:</strong> Collect more data first, or use expert rules</p>
+</div>
+
+<div class="method-card">
+<h4>🎯 100% Accuracy Required</h4>
+<p>ML models make mistakes. If errors are unacceptable, ML may not be appropriate.</p>
+<p><strong>Example:</strong> Safety-critical systems where any error could be fatal.</p>
+<p><strong>Better approach:</strong> Human oversight, deterministic systems</p>
+</div>
+
+<div class="method-card">
+<h4>🔍 Explainability is Critical</h4>
+<p>Some ML models are "black boxes." If you must explain every decision, this is problematic.</p>
+<p><strong>Example:</strong> Legal or medical decisions requiring clear reasoning.</p>
+<p><strong>Better approach:</strong> Simpler, interpretable models or rule-based systems</p>
+</div>
+
+<div class="method-card">
+<h4>💰 Cost Exceeds Benefit</h4>
+<p>ML requires time, expertise, compute resources, and ongoing maintenance.</p>
+<p><strong>Consider:</strong> Data collection, training, deployment, monitoring costs.</p>
+<p><strong>Better approach:</strong> Manual processes or simpler automation</p>
+</div>
+
+<div class="method-card">
+<h4>⚖️ Ethical Concerns</h4>
+<p>Some applications raise serious ethical questions even if technically possible.</p>
+<p><strong>Examples:</strong> Surveillance, manipulation, decisions affecting vulnerable populations without oversight.</p>
+<p><strong>Better approach:</strong> Human judgment, democratic oversight</p>
+</div>
+</div>
+
+<h3>The Right Questions to Ask</h3>
+
+<div class="highlight-box info">
+<p>Before starting any ML project, ask yourself:</p>
+<ol>
+<li><strong>What problem am I actually solving?</strong> (Not "how can I use ML?")</li>
+<li><strong>Do I have enough quality data?</strong> (Garbage in = garbage out)</li>
+<li><strong>What happens when the model is wrong?</strong> (And it will be wrong sometimes)</li>
+<li><strong>Could a simpler solution work?</strong> (Start simple, add complexity only if needed)</li>
+<li><strong>Who could be harmed?</strong> (Consider unintended consequences)</li>
+<li><strong>Can I maintain this long-term?</strong> (Models need monitoring and updates)</li>
+</ol>
+</div>
+
+<div class="highlight-box success">
+<h4>💡 The Golden Rule</h4>
+<p style="font-size: 1.2rem;"><strong>Use ML when the patterns are too complex for humans to codify manually, you have sufficient quality data, the cost of errors is acceptable, and the benefits outweigh the costs.</strong></p>
+</div>
+            </div>
+        </section>
+
+        <section class="slide " id="slide-20">
             <div class="content-slide">
 <h2>🎓 Key Takeaways & Learning Outcomes</h2>
 
@@ -1572,7 +2238,7 @@ Car 3:
 </ul>            </div>
         </section>
 
-        <section class="slide " id="slide-15">
+        <section class="slide " id="slide-21">
             <div class="content-slide">
 <h2>💡 Practice Exercises & Next Steps</h2>
 
@@ -1637,7 +2303,7 @@ Car 3:
 </ol>            </div>
         </section>
 
-        <section class="slide " id="slide-16">
+        <section class="slide " id="slide-22">
             <div class="content-slide">
 <h2>Thank You! Questions?</h2>
 
@@ -1686,7 +2352,7 @@ Tulane University</p>
 
     <script>
         let currentSlide = 0;
-        const totalSlides = 17;
+        const totalSlides = 23;
 
         function updateSlide() {
             // Hide all slides
