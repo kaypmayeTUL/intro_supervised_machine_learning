@@ -538,17 +538,20 @@
                 <option value="0">Introduction to Supervised Learning with Python</option>
                 <option value="1">What is Python?</option>
                 <option value="2">Understanding Machine Learning Methods</option>
-                <option value="3">Step 1: Import Libraries</option>
-                <option value="4">Step 2: Create the Car Dataset</option>
-                <option value="5">Step 3: Explore the Data</option>
-                <option value="6">Step 4: Prepare Data for Machine Learning</option>
-                <option value="7">Step 5: Build and Train Models</option>
-                <option value="8">Step 6: Evaluate Model Performance</option>
-                <option value="9">Step 7: Feature Importance Analysis</option>
-                <option value="10">Step 8: Make Predictions on New Data</option>
-                <option value="11">🎓 Key Takeaways & Learning Outcomes</option>
-                <option value="12">💡 Practice Exercises</option>
-                <option value="13">Contact & Questions</option>
+                <option value="3">🖥️ Python IDEs (Integrated Development Environments)</option>
+                <option value="4">📥 Installing Python</option>
+                <option value="5">📦 Installing Python Libraries</option>
+                <option value="6">Step 1: Import Libraries</option>
+                <option value="7">Step 2: Create the Car Dataset</option>
+                <option value="8">Step 3: Explore the Data</option>
+                <option value="9">Step 4: Prepare Data for Machine Learning</option>
+                <option value="10">Step 5: Build and Train Models</option>
+                <option value="11">Step 6: Evaluate Model Performance</option>
+                <option value="12">Step 7: Feature Importance Analysis</option>
+                <option value="13">Step 8: Make Predictions on New Data</option>
+                <option value="14">🎓 Key Takeaways & Learning Outcomes</option>
+                <option value="15">💡 Practice Exercises</option>
+                <option value="16">Contact & Questions</option>
             </select>
             <span class="page-indicator" id="pageIndicator">1 / 14</span>
             <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
@@ -654,6 +657,175 @@
 
         <section class="slide " id="slide-3">
             <div class="content-slide">
+<h2>🖥️ Python IDEs (Integrated Development Environments)</h2>
+
+<div class="highlight-box">
+<p>An <strong>IDE</strong> (Integrated Development Environment) is a software application that provides tools for writing, testing, and running code. Think of it as Microsoft Word for programmers—it helps you write code more efficiently!</p>
+</div>
+
+<h3>Popular Python IDEs for Data Science</h3>
+
+<div class="method-grid">
+<div class="method-card">
+<h4>☁️ Google Colab</h4>
+<p><strong>Best for: Beginners & Collaboration</strong></p>
+<p>Free, cloud-based notebook that runs in your browser. No installation required! Great for learning and sharing work.</p>
+<p><a href="https://colab.research.google.com/" target="_blank">→ colab.research.google.com</a></p>
+</div>
+
+<div class="method-card">
+<h4>📓 Jupyter Notebook</h4>
+<p><strong>Best for: Data Analysis & Research</strong></p>
+<p>Interactive notebooks that combine code, visualizations, and text. Industry standard for data science workflows.</p>
+<p><a href="https://jupyter.org/" target="_blank">→ jupyter.org</a></p>
+</div>
+
+<div class="method-card">
+<h4>🕷️ Spyder</h4>
+<p><strong>Best for: Scientific Computing</strong></p>
+<p>Designed specifically for scientists. Includes variable explorer, debugger, and MATLAB-like interface.</p>
+<p><a href="https://www.spyder-ide.org/" target="_blank">→ spyder-ide.org</a></p>
+</div>
+
+<div class="method-card">
+<h4>💻 VS Code</h4>
+<p><strong>Best for: General Development</strong></p>
+<p>Lightweight, highly customizable editor with excellent Python support through extensions.</p>
+<p><a href="https://code.visualstudio.com/" target="_blank">→ code.visualstudio.com</a></p>
+</div>
+
+<div class="method-card">
+<h4>🧠 PyCharm</h4>
+<p><strong>Best for: Professional Development</strong></p>
+<p>Full-featured IDE with powerful debugging, testing, and code analysis tools. Free Community edition available.</p>
+<p><a href="https://www.jetbrains.com/pycharm/" target="_blank">→ jetbrains.com/pycharm</a></p>
+</div>
+
+<div class="method-card">
+<h4>🐍 Anaconda Navigator</h4>
+<p><strong>Best for: Package Management</strong></p>
+<p>GUI that bundles Python with Jupyter, Spyder, and 250+ pre-installed packages. Great for hassle-free setup.</p>
+<p><a href="https://www.anaconda.com/" target="_blank">→ anaconda.com</a></p>
+</div>
+</div>
+
+<div class="highlight-box success">
+<p>✅ <strong>Recommendation for Today:</strong> We recommend using <strong>Google Colab</strong> for this workshop—it's free, requires no installation, and works in any browser!</p>
+</div>
+            </div>
+        </section>
+
+        <section class="slide " id="slide-4">
+            <div class="content-slide">
+<h2>📥 Installing Python</h2>
+
+<div class="highlight-box info">
+<p>💡 <strong>Good news!</strong> If you're using Google Colab or Anaconda, Python is already installed! These instructions are for installing Python on your local computer.</p>
+</div>
+
+<h3>Option 1: Install Python Directly (Recommended for Beginners)</h3>
+
+<ol>
+<li>Go to <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a></li>
+<li>Click the yellow "Download Python" button (it detects your operating system)</li>
+<li>Run the installer</li>
+<li><strong>Important:</strong> Check the box that says <strong>"Add Python to PATH"</strong> before clicking Install</li>
+</ol>
+
+<div class="code-block"><code># After installation, verify Python is installed by opening a terminal/command prompt:
+python --version
+
+# You should see something like:
+# Python 3.12.0</code></div>
+
+<h3>Option 2: Install via Anaconda (Recommended for Data Science)</h3>
+
+<ol>
+<li>Go to <a href="https://www.anaconda.com/download" target="_blank">anaconda.com/download</a></li>
+<li>Download the installer for your operating system</li>
+<li>Run the installer with default options</li>
+<li>This installs Python + 250+ data science packages automatically!</li>
+</ol>
+
+<div class="highlight-box warning">
+<h4>⚠️ Common Installation Issues</h4>
+<ul>
+<li><strong>"Python not found":</strong> Make sure you checked "Add to PATH" during installation</li>
+<li><strong>Multiple Python versions:</strong> Use <code>python3</code> instead of <code>python</code> on Mac/Linux</li>
+<li><strong>Permission errors:</strong> On Mac/Linux, you may need to use <code>sudo</code> for some installations</li>
+</ul>
+</div>
+
+<div class="highlight-box success">
+<p>✅ <strong>Verification:</strong> Open your terminal or command prompt and type <code>python --version</code>. If you see a version number (like Python 3.12.0), you're ready to go!</p>
+</div>
+            </div>
+        </section>
+
+        <section class="slide " id="slide-5">
+            <div class="content-slide">
+<h2>📦 Installing Python Libraries</h2>
+
+<div class="highlight-box">
+<p><strong>Libraries</strong> (also called packages) are collections of pre-written code that extend Python's capabilities. Instead of writing everything from scratch, we use libraries to save time!</p>
+</div>
+
+<h3>Method 1: Using pip (Python's Package Manager)</h3>
+
+<p>pip comes pre-installed with Python. Open your terminal or command prompt:</p>
+
+<div class="code-block"><code># Install a single library
+pip install pandas
+
+# Install multiple libraries at once
+pip install pandas numpy scikit-learn matplotlib seaborn
+
+# Install a specific version
+pip install pandas==2.0.0
+
+# Upgrade an existing library
+pip install --upgrade pandas</code></div>
+
+<h3>Method 2: In Google Colab or Jupyter Notebook</h3>
+
+<p>Use the <code>!</code> prefix to run terminal commands in notebook cells:</p>
+
+<div class="code-block"><code># Run this in a notebook cell
+!pip install pandas numpy scikit-learn matplotlib seaborn</code></div>
+
+<h3>Method 3: Using Anaconda</h3>
+
+<p>Anaconda has its own package manager called <code>conda</code>:</p>
+
+<div class="code-block"><code># Using conda (in Anaconda Prompt)
+conda install pandas numpy scikit-learn matplotlib seaborn
+
+# Or use Anaconda Navigator's GUI to install packages</code></div>
+
+<h3>Libraries We'll Use Today</h3>
+
+<div class="code-block"><code># Install all required libraries for this workshop
+pip install pandas numpy scikit-learn matplotlib seaborn</code></div>
+
+<div class="highlight-box info">
+<h4>📋 What Each Library Does:</h4>
+<ul>
+<li><strong>pandas:</strong> Data manipulation and analysis (DataFrames)</li>
+<li><strong>numpy:</strong> Numerical computing and arrays</li>
+<li><strong>scikit-learn:</strong> Machine learning algorithms</li>
+<li><strong>matplotlib:</strong> Creating plots and visualizations</li>
+<li><strong>seaborn:</strong> Statistical data visualization (built on matplotlib)</li>
+</ul>
+</div>
+
+<div class="highlight-box success">
+<p>✅ <strong>Verification:</strong> After installing, you can verify by running <code>import pandas</code> in Python. If no error appears, the installation was successful!</p>
+</div>
+            </div>
+        </section>
+
+        <section class="slide " id="slide-6">
+            <div class="content-slide">
 <h2>Step 1: Import Libraries</h2>
 <div class="code-explanation">
 <h4>💡 What This Code Does:</h4>
@@ -692,7 +864,7 @@ print(&quot;Libraries imported successfully! ✅&quot;)</code></div>
             </div>
         </section>
 
-        <section class="slide " id="slide-4">
+        <section class="slide " id="slide-7">
             <div class="content-slide">
 <h2>Step 2: Create the Car Dataset</h2>
 <div class="code-explanation">
@@ -789,7 +961,7 @@ First few rows:
             </div>
         </section>
 
-        <section class="slide " id="slide-5">
+        <section class="slide " id="slide-8">
             <div class="content-slide">
 <h2>Step 3: Explore the Data</h2>
 <div class="code-explanation">
@@ -937,7 +1109,7 @@ plt.show()</code></div>
             </div>
         </section>
 
-        <section class="slide " id="slide-6">
+        <section class="slide " id="slide-9">
             <div class="content-slide">
 <h2>Step 4: Prepare Data for Machine Learning</h2>
 <div class="code-explanation">
@@ -1006,7 +1178,7 @@ This helps us assess how well our model generalizes to new data!</div>
             </div>
         </section>
 
-        <section class="slide " id="slide-7">
+        <section class="slide " id="slide-10">
             <div class="content-slide">
 <h2>Step 5: Build and Train Models</h2>
 <h3>Model 1: Linear Regression</h3>
@@ -1053,7 +1225,7 @@ Predictions made on test set!
             </div>
         </section>
 
-        <section class="slide " id="slide-8">
+        <section class="slide " id="slide-11">
             <div class="content-slide">
 <h2>Step 6: Evaluate Model Performance</h2>
 <div class="code-explanation">
@@ -1184,7 +1356,7 @@ Linear Regression 2955.539049 4162.299399  0.726655
             </div>
         </section>
 
-        <section class="slide " id="slide-9">
+        <section class="slide " id="slide-12">
             <div class="content-slide">
 <h2>Step 7: Feature Importance Analysis</h2>
 <div class="code-explanation">
@@ -1233,7 +1405,7 @@ accident_history    0.023858
             </div>
         </section>
 
-        <section class="slide " id="slide-10">
+        <section class="slide " id="slide-13">
             <div class="content-slide">
 <h2>Step 8: Make Predictions on New Data</h2>
 <div class="code-explanation">
@@ -1351,7 +1523,7 @@ Car 3:
             </div>
         </section>
 
-        <section class="slide " id="slide-11">
+        <section class="slide " id="slide-14">
             <div class="content-slide">
 <h2>🎓 Key Takeaways & Learning Outcomes</h2>
 
@@ -1398,7 +1570,7 @@ Car 3:
 </ul>            </div>
         </section>
 
-        <section class="slide " id="slide-12">
+        <section class="slide " id="slide-15">
             <div class="content-slide">
 <h2>💡 Practice Exercises & Next Steps</h2>
 
@@ -1463,7 +1635,7 @@ Car 3:
 </ol>            </div>
         </section>
 
-        <section class="slide " id="slide-13">
+        <section class="slide " id="slide-16">
             <div class="content-slide">
 <h2>Thank You! Questions?</h2>
 
@@ -1477,7 +1649,7 @@ Car 3:
 Tulane University</p>
 
 <div class="contact-details">
-<p>📧 <strong>Email:</strong> <a href="mailto:kmaye@tulane.edu">kmaye@tulane.edu</a></p>
+<p>📧 <strong>Email:</strong> <a href="mailto:kprevill@tulane.edu">kprevill@tulane.edu</a></p>
 <p>🏛️ <strong>Library:</strong> <a href="https://library.tulane.edu" target="_blank">library.tulane.edu</a></p>
 </div>
 </div>
@@ -1512,7 +1684,7 @@ Tulane University</p>
 
     <script>
         let currentSlide = 0;
-        const totalSlides = 14;
+        const totalSlides = 17;
 
         function updateSlide() {
             // Hide all slides
@@ -1576,8 +1748,6 @@ Tulane University</p>
 
         // Initialize
         updateSlide();
-        
-        console.log(`Presentation loaded with ${totalSlides} slides`);
     </script>
 </body>
 </html>
